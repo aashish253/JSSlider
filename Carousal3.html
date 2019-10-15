@@ -1,0 +1,48 @@
+<html>
+    <head>
+<style>
+img{
+    height: 100px;
+    width: 100px;
+}
+</style>
+    </head>
+    <body>
+        <img id="slide" src="" >
+        <button id="prev" onclick="previous()">Pervious</button>
+        <button id="next" onclick="next()">Next</button>
+    </body>
+    <script>
+    var img = document.images;
+    var i=0;
+    var btnext = document.getElementById("next");
+    var btprev = document.getElementById("prev");
+    var slid = document.getElementById('slide');
+    var imageDir = '/home/ranosys/Downloads/';
+    
+    var images1 = ["download (3).jpeg","download (1).jpeg","download.jpeg","download (2).jpeg"]
+    slid.src = imageDir + images1[i];
+    function next(){
+        // debugger;
+        slid.src = imageDir + images1[++i];
+        if(i == 3){
+            btnext.disabled = true;
+        }
+        else{
+            btprev.disabled = false;
+        }
+    }
+    
+    function previous(){
+        // debugger;
+       slid.src = imageDir + images1[--i];
+       console.log(i);    
+       if(i == 0){
+        btprev.disabled = true;
+       }
+       else{
+        btnext.disabled = false;
+       }
+    }
+    </script>
+</html>
